@@ -1,0 +1,17 @@
+{
+    "name": "gspataro/pdash-api",
+    "description": "CRUD API for managing todos, notes and other things for a full functional personal dashboard.",
+    "type": "library",
+    "config": {
+        "vendor-dir": "./source/vendor"
+    },
+    "require": {
+        "filp/whoops": "2.14.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GSpataro\\": "./source/components",
+            "PDash\\": "./source/application"
+        }
+    }
+}
