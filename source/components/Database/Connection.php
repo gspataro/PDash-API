@@ -5,16 +5,8 @@ namespace GSpataro\Database;
 use PDO;
 use PDOException;
 
-final class Connection
+final class Connection extends PDO
 {
-    /**
-     * Store connection
-     *
-     * @var PDO
-     */
-
-    private PDO $pdo;
-
     /**
      * Initialize database connection
      *
@@ -31,20 +23,9 @@ final class Connection
         $dsn = "{$driver}:host={$hostname};port={$port};dbname={$dbname}";
 
         try {
-            $this->pdo = new PDO($dsn, $username, $password);
+            parent::__construct($dsn, $username, $password);
         } catch (PDOException $e) {
             throw new PDOException($e);
         }
-    }
-
-    /**
-     * Get connection
-     *
-     * @return PDO
-     */
-
-    public function get(): PDO
-    {
-        return $this->pdo;
     }
 }
