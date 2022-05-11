@@ -53,6 +53,18 @@ final class Response
     }
 
     /**
+     * Set response Content-Type header
+     *
+     * @param string $type
+     * @return void
+     */
+
+    public function setContentTypeHeader(string $type): void
+    {
+        header("Content-Type: {$type}; charset=UTF-8");
+    }
+
+    /**
      * Get the URL to a route
      *
      * @param string $routeTag
