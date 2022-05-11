@@ -24,5 +24,24 @@ $db = new Database\Connection(
     DB_NAME
 );
 
+// Initialize routing process
+
 $request = new Routing\Request();
-$router = new Routing\Router();
+$routesCollection = new Routing\RoutesCollection();
+
+$routes = require_once DIR_APP . "/routes.php";
+$routesCollection->feed($routes);
+
+$router = new Routing\Router(
+    $routesCollection,
+    $request
+);
+$response = $router->deploy();
+
+// Dispatch response route
+
+$controller = new $response->matchingRoute['controller'](
+    $request,
+    $response
+);
+call_user_func([$controller, $response->matchingRoute['method']]);
