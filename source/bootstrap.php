@@ -21,7 +21,8 @@ $db = new Database\Connection(
     DB_HOSTNAME,
     DB_USERNAME,
     DB_PASSWORD,
-    DB_NAME
+    DB_NAME,
+    DB_PORT
 );
 
 // Initialize routing process
