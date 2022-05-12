@@ -2,8 +2,6 @@
 
 namespace PDash\Controller;
 
-use GSpataro\Routing\Controller;
-
 final class HomeController extends Controller
 {
     public function index()

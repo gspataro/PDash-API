@@ -83,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gspataro/Routing.git",
-                "reference": "5751c3b87f4cf2a503ce2bce325b9c7ebd9d0099"
+                "reference": "f658d390fb80289e5f5df4f31f699c3562bfbcea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gspataro/Routing/zipball/5751c3b87f4cf2a503ce2bce325b9c7ebd9d0099",
-                "reference": "5751c3b87f4cf2a503ce2bce325b9c7ebd9d0099",
+                "url": "https://api.github.com/repos/gspataro/Routing/zipball/f658d390fb80289e5f5df4f31f699c3562bfbcea",
+                "reference": "f658d390fb80289e5f5df4f31f699c3562bfbcea",
                 "shasum": ""
             },
             "default-branch": true,
@@ -103,7 +103,7 @@
                 "source": "https://github.com/gspataro/Routing/tree/master",
                 "issues": "https://github.com/gspataro/Routing/issues"
             },
-            "time": "2022-05-12T09:01:00+00:00"
+            "time": "2022-05-12T10:04:20+00:00"
         },
         {
             "name": "psr/log",
