@@ -6,16 +6,22 @@ final class HomeController extends Controller
 {
     public function index()
     {
-        echo "hello world";
+        echo "You are successfully connected to the PDash API!";
     }
 
     public function pageNotFound()
     {
-        echo "page not found";
+        echo "404 Page not found";
     }
 
     public function methodNotAllowed()
     {
-        echo "method not allowed";
+        echo "405 Method not allowed";
+    }
+
+    public function accessDenied()
+    {
+        $this->response->setStatusHeader(401);
+        echo "Access denied";
     }
 }
