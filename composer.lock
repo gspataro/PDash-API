@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28492691561fbdffda13d8dc0ccc277b",
+    "content-hash": "738ced81ded65ee38984881965f1273d",
     "packages": [
         {
             "name": "filp/whoops",
@@ -78,6 +78,34 @@
             "time": "2022-01-07T12:00:00+00:00"
         },
         {
+            "name": "gspataro/routing",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:gspataro/Routing.git",
+                "reference": "5751c3b87f4cf2a503ce2bce325b9c7ebd9d0099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gspataro/Routing/zipball/5751c3b87f4cf2a503ce2bce325b9c7ebd9d0099",
+                "reference": "5751c3b87f4cf2a503ce2bce325b9c7ebd9d0099",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GSpataro\\Routing\\": "/src"
+                }
+            },
+            "description": "Custom routing component",
+            "support": {
+                "source": "https://github.com/gspataro/Routing/tree/master",
+                "issues": "https://github.com/gspataro/Routing/issues"
+            },
+            "time": "2022-05-12T09:01:00+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "3.0.0",
             "source": {
@@ -131,7 +159,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "gspataro/routing": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

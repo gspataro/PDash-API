@@ -6,8 +6,15 @@
         "vendor-dir": "./source/vendor"
     },
     "require": {
-        "filp/whoops": "2.14.*"
+        "filp/whoops": "2.14.*",
+        "gspataro/routing": "dev-master"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:gspataro/Routing.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "GSpataro\\": "./source/components",
