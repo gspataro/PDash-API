@@ -43,6 +43,7 @@ $response = $router->deploy();
 
 $controller = new $response->matchingRoute['controller'](
     $request,
-    $response
+    $response,
+    $db
 );
 call_user_func([$controller, $response->matchingRoute['method']]);
