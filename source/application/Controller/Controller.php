@@ -24,4 +24,16 @@ abstract class Controller
             $this->init();
         }
     }
+
+    /**
+     * Encode and send JSON response
+     *
+     * @param array $response
+     * @return void
+     */
+
+    protected function sendResponse(array $response): void
+    {
+        echo json_encode($response);
+    }
 }
