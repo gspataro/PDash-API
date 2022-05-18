@@ -132,9 +132,12 @@ abstract class Form extends Validator
             if ($response['failed']) {
                 $this->failed = true;
                 $this->response['field'] = $tag;
-                break;
+                $this->onFail();
+                return;
             }
         }
+
+        $this->onSuccess();
     }
 
     /**
