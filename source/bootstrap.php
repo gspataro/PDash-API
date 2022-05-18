@@ -2,6 +2,7 @@
 
 use GSpataro\Routing;
 use GSpataro\Database;
+use GSpataro\Validation;
 
 require_once __DIR__ . "/directories.php";
 require_once DIR_ROOT . "/config.php";
@@ -24,6 +25,10 @@ $db = new Database\Connection(
     DB_NAME,
     DB_PORT
 );
+
+// Initialize validation module
+
+Validation\Validator::loadDefaultRules();
 
 // Initialize routing process
 
