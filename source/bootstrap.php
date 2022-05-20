@@ -10,7 +10,7 @@ require_once DIR_VENDOR . "/autoload.php";
 
 // Initialize filp/whoops error handler
 
-$whoopsHandler = new Whoops\Handler\PrettyPageHandler();
+$whoopsHandler = new Whoops\Handler\JsonResponseHandler();
 $whoops = new Whoops\Run();
 $whoops->pushHandler($whoopsHandler);
 $whoops->register();
