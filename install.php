@@ -38,7 +38,7 @@ $queriesQueue[] = $database->prepare("CREATE TABLE IF NOT EXISTS todo (
     content VARCHAR(255),
     completed BOOLEAN,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 )");
 
