@@ -19,4 +19,53 @@ final class TodoModel extends Model
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Add a new todo and return its id
+     *
+     * @param string $content
+     * @param bool $completed
+     * @return int
+     */
+
+    public function add(string $content, bool $completed = false): int
+    {
+        $query = $this->db->prepare("INSERT INTO todo (content, completed) VALUES (:content, :completed)");
+        $query->execute([
+            "content" => $content,
+            "completed" => (int) $completed
+        ]);
+
+        return $this->db->lastInsertId();
+    }
+
+    /**
+     * Update a todo and returns the number of affected rows
+     *
+     * @param int $id
+     * @param string|null $content
+     * @param bool|null $completed
+     * @return void
+     */
+
+    public function update(int $id, ?string $content, ?bool $completed): int
+    {
+        $query = $this->db->prepare("UPDATE todo
+            SET content = case when :content is not null and length(:content) > 0
+                        then :content
+                        else content
+                    end,
+                completed = case when :completed is not null and length(:completed) > 0
+                        then :completed
+                        else completed
+                    end
+            WHERE id = :id");
+        $query->execute([
+            "content" => $content,
+            "completed" => (int) $completed,
+            "id" => $id
+        ]);
+
+        return $query->rowCount();
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace PDash\Controller;
 
+use PDash\Form;
 use PDash\Model\TodoModel;
 
 final class TodoController extends Controller
@@ -26,10 +27,26 @@ final class TodoController extends Controller
             };
         }
 
-        echo json_encode($this->todo->getAll($order));
+        $this->sendResponse($this->todo->getAll($order));
     }
 
     public function insert(): void
     {
+        $this->response->setContentTypeHeader("application/json");
+
+        $form = new Form\TodoInsert($this->request, $this->todo);
+        $form->validate();
+
+        $this->sendResponse($form->getResponse());
+    }
+
+    public function update(): void
+    {
+        $this->response->setContentTypeHeader("application/json");
+
+        $form = new Form\TodoUpdate($this->request, $this->todo);
+        $form->validate();
+
+        $this->sendResponse($form->getResponse());
     }
 }

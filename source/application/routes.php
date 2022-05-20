@@ -33,5 +33,10 @@ return [
         "path" => "/todo/insert",
         "callback" => [Controller\TodoController::class, "insert"],
         "methods" => [Method::POST]
+    ],
+    "todo.update" => [
+        "path" => "/todo/update",
+        "callback" => [Controller\TodoController::class, "update"],
+        "methods" => [Method::POST]
     ]
 ];
