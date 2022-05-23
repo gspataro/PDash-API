@@ -68,4 +68,36 @@ final class TodoModel extends Model
 
         return $query->rowCount();
     }
+
+    /**
+     * Verify if a todo exists
+     *
+     * @param int $id
+     * @return bool
+     */
+
+    public function exists(int $id): bool
+    {
+        $query = $this->db->prepare("SELECT * FROM todo WHERE id = :id");
+        $query->execute([
+            "id" => $id
+        ]);
+
+        return $query->rowCount() > 0;
+    }
+
+    /**
+     * Delete a todo
+     *
+     * @param int $id
+     * @return void
+     */
+
+    public function delete(int $id): void
+    {
+        $query = $this->db->prepare("DELETE FROM todo WHERE id = :id");
+        $query->execute([
+            "id" => $id
+        ]);
+    }
 }

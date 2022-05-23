@@ -49,4 +49,24 @@ final class TodoController extends Controller
 
         $this->sendResponse($form->getResponse());
     }
+
+    public function delete(): void
+    {
+        $this->response->setContentTypeHeader("application/json");
+        $todoId = $this->request->post("id");
+
+        if ($todoId && $this->todo->exists($todoId)) {
+            $this->todo->delete($todoId);
+
+            $this->sendResponse([
+                "status" => "success",
+                "message" => "Todo with ID '{$todoId}' deleted successfully!"
+            ]);
+        } else {
+            $this->sendResponse([
+                "status" => "error",
+                "message" => "Cannot delete todo with ID '{$todoId}'. Todo not found."
+            ]);
+        }
+    }
 }
