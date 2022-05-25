@@ -37,7 +37,7 @@ return [
     "todo.update" => [
         "path" => "/todo/update",
         "callback" => [Controller\TodoController::class, "update"],
-        "methods" => [Method::POST]
+        "methods" => [Method::PUT]
     ],
     "todo.delete" => [
         "path" => "/todo/delete",

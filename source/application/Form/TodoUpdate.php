@@ -19,7 +19,7 @@ class TodoUpdate extends Form
     {
         return [
             "id" => [
-                "value" => (int) $this->request->post("id"),
+                "value" => (int) $this->request->input("id"),
                 "rules" => ["required"]
             ]
         ];
@@ -27,9 +27,9 @@ class TodoUpdate extends Form
 
     protected function onSuccess(): void
     {
-        $content = (string) $this->request->post("content");
-        $completed = !is_null($this->request->post("completed")) && strlen($this->request->post("completed") > 0);
-        $id = (int) $this->request->post("id");
+        $content = (string) $this->request->input("content");
+        $completed = !is_null($this->request->input("completed")) && strlen($this->request->input("completed") > 0);
+        $id = (int) $this->request->input("id");
 
         $affectedRows = $this->todoModel->update(
             $id,
