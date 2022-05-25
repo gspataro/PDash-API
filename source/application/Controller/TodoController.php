@@ -53,7 +53,7 @@ final class TodoController extends Controller
     public function delete(): void
     {
         $this->response->setContentTypeHeader("application/json");
-        $todoId = $this->request->post("id");
+        $todoId = $this->request->input("id");
 
         if ($todoId && $this->todo->exists($todoId)) {
             $this->todo->delete($todoId);

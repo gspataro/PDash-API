@@ -42,6 +42,6 @@ return [
     "todo.delete" => [
         "path" => "/todo/delete",
         "callback" => [Controller\TodoController::class, "delete"],
-        "methods" => [Method::POST]
+        "methods" => [Method::DELETE]
     ]
 ];
