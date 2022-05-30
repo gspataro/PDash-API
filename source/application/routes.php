@@ -3,7 +3,6 @@
 use PDash\Controller;
 use PDash\Middleware;
 use GSpataro\Routing\Method;
-use PDash\Middleware\AuthMiddleware;
 
 return [
     "home" => [
