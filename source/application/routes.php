@@ -31,16 +31,19 @@ return [
     "todo.insert" => [
         "path" => "/todo/insert",
         "callback" => [Controller\TodoController::class, "insert"],
-        "methods" => [Method::POST]
+        "methods" => [Method::POST],
+        "middlewares" => [Middleware\AuthMiddleware::class]
     ],
     "todo.update" => [
         "path" => "/todo/update",
         "callback" => [Controller\TodoController::class, "update"],
-        "methods" => [Method::PUT]
+        "methods" => [Method::PUT],
+        "middlewares" => [Middleware\AuthMiddleware::class]
     ],
     "todo.delete" => [
         "path" => "/todo/delete",
         "callback" => [Controller\TodoController::class, "delete"],
-        "methods" => [Method::DELETE]
+        "methods" => [Method::DELETE],
+        "middlewares" => [Middleware\AuthMiddleware::class]
     ]
 ];
