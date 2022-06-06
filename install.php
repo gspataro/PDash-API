@@ -42,6 +42,15 @@ $queriesQueue[] = $database->prepare("CREATE TABLE IF NOT EXISTS todo (
     PRIMARY KEY (id)
 )");
 
+$queriesQueue[] = $database->prepare("CREATE TABLE IF NOT EXISTS notes (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    content LONGTEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+)");
+
 // Execute queries
 
 foreach ($queriesQueue as $query) {
