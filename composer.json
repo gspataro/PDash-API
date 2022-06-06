@@ -7,7 +7,7 @@
     },
     "require": {
         "filp/whoops": "2.14.*",
-        "gspataro/routing": "dev-master"
+        "gspataro/routing": "0.1.0"
     },
     "repositories": [
         {
